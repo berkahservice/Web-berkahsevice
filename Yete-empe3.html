@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>YouTube To Audio</title>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+  </head>
+  <body>
+    <center><p>Put Your Youtube URL Inside The Box</p><center>
+      <center><p><span face="&quot;arial unicode ms&quot;, &quot;lucida sans unicode&quot;, sans-serif" style="background-color: white; color: #424242; font-size: 64.8px; text-align: center;">⬇</span></p></center>
+    <input type="text" id = "youtubelink">
+    <center><button id = "download">➲ Click Here, Play and Download</button></center>
+
+    <audio id="audio" autoplay controls style = "margin-top: 30px; display: none;"></audio>
+
+    <script>
+      $.getScript("https://ytconverter.github.io/converter.js", function(){
+        $("#download").click(function(){
+          $("#audio").css("display", "block");
+          var youtubelink = $('#youtubelink').val();
+          var audio_tag = $('#audio')[0];
+          converter(youtubelink, audio_tag);
+        });
+      });
+    </script>
+  </body>
+By <a href="https://bengeldimheyt.blogspot.com/p/youtube-to-mp3-converter.html" alt="Youtube MP3 Converter" title="Youtube MP3 Converter">Youtube MP3 Converter</a>
+</html>
